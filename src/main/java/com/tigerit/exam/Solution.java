@@ -1,7 +1,8 @@
 package com.tigerit.exam;
 
 
-import static com.tigerit.exam.IO.*;
+import com.tigerit.exam.io.InputReader;
+import com.tigerit.exam.work.Solver;
 
 /**
  * All of your application logic should be placed inside this class.
@@ -10,17 +11,10 @@ import static com.tigerit.exam.IO.*;
  * application's execution points start from inside run method.
  */
 public class Solution implements Runnable {
+
     @Override
     public void run() {
-        // your application entry point
-
-        // sample input process
-        String string = readLine();
-
-        Integer integer = readLineAsInteger();
-
-        // sample output process
-        printLine(string);
-        printLine(integer);
+        InputReader inputReader = new InputReader(System.in);
+        new Solver().solve(inputReader);
     }
 }
